@@ -1,0 +1,51 @@
+<div class="search-container">
+    <h3>Buscador de Héroes</h3>
+  
+    <mat-form-field class="full-width">
+      <mat-label>Buscador de héroes</mat-label>
+      <input
+        type="text"
+        matInput
+        [formControl]="searchInput"
+        (input)="searchHero()"
+        [matAutocomplete]="auto"
+      />
+  
+      <mat-autocomplete autoActiveFirstOption
+        #auto="matAutocomplete"
+        (optionSelected)="onSelectedOption($event)"
+      >
+        <mat-option *ngFor="let hero of heroes" [value]="hero">
+          {{ hero.superhero }}
+        </mat-option>
+  
+        <mat-option
+          *ngIf="heroes.length === 0 && searchInput.value && searchInput.value.length > 0"
+          value=""
+        >
+          No se encontró nada con el término {{ searchInput.value }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  
+    <!-- Detalles del héroe seleccionado -->
+    <div 
+      class="hero-details"
+      *ngIf="selectedHero"
+      [@fadeInAnimation]>
+      <h2>{{ selectedHero.superhero }}</h2>
+      <div class="image-container">
+        <img 
+          class="hero-image" 
+          [src]="selectedHero.alt_img || 'assets/default-hero.png'" 
+          alt="{{ selectedHero.superhero }}" 
+        />
+      </div>
+      <p><strong>Nombre real:</strong> {{ selectedHero.alter_ego }}</p>
+      <p><strong>Publicado por:</strong> {{ selectedHero.publisher }}</p>
+      <p><strong>Primera aparición:</strong> {{ selectedHero.first_appearance }}</p>
+      <p><strong>Personajes que lo interpretan:</strong> {{ selectedHero.characters }}</p>
+    </div>
+  
+  </div>
+  

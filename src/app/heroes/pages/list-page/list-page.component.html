@@ -1,0 +1,40 @@
+<h1>Listado de Héroes</h1>
+<mat-divider></mat-divider>
+
+<!-- Estilos de animación dentro del archivo de componente -->
+<style>
+  /* Animación de desvanecimiento y deslizamiento hacia arriba */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Clase de animación para las cartas de los héroes */
+  .hero-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;  /* Inicialmente invisibles */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Animación cuando el mouse pasa sobre la carta */
+  .hero-card:hover {
+    transform: scale(1.1);  /* Aumenta el tamaño de la carta */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Sombra suave */
+    transform: rotate(5deg);  /* Rotación suave */
+  }
+</style>
+
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let hero of heroes" class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <!-- Aplicando la clase 'hero-card' que tiene la animación -->
+    <div class="hero-card">
+      <heroes-hero-card [hero]="hero"></heroes-hero-card>
+    </div>
+  </div>
+</div>
