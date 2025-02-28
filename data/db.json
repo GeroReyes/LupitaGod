@@ -11,8 +11,8 @@
       "id": "dc-batman",
       "superhero": "Batman",
       "publisher": "DC Comics",
-      "alter_ego": "Bruce Wayne",
-      "first_appearance": "Detective Comics #27",
+      "alter_ego": " Wayne",
+      "first_appearance": "Detective Comics #29",
       "characters": "Bruce Wayne",
       "alt_img": "images/heroes/dc-batman.jpg",
       "imageUrl": "images/heroes/dc-batman.jpg"
@@ -205,6 +205,15 @@
       "first_appearance": "More Fun Comics #73, ",
       "characters": "Arthur Curry",
       "alt_img": "https://th.bing.com/th/id/OIP.I4AKoGZI9Ez-_d27W8cxGgHaK_?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "2RrtEyu",
+      "superhero": "cibor",
+      "publisher": "DC Comics",
+      "alter_ego": "cibor",
+      "first_appearance": "Titanes en accion",
+      "characters": "Cy",
+      "alt_img": "https://th.bing.com/th/id/R.157878927affbe8d8646bf36ebdaf81a?rik=DTTtPT%2fsmHwiLQ&pid=ImgRaw&r=0"
     }
   ]
 }
